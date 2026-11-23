@@ -1,0 +1,22 @@
+/* Original navigation from the source site, scoped to all three pages. */
+@font-face{font-family:"Header Icons";src:url("header-icons.woff2") format("woff2");font-weight:900;font-style:normal;font-display:block}
+.site-menu{padding:12px 0;position:fixed;top:0;left:0;width:100%;z-index:1000;background:#e05e00;border-bottom:1px solid rgb(255 255 255 / .2);box-shadow:0 2px 10px rgb(0 0 0 / .1);font-family:Raleway,Arial,sans-serif;line-height:1.7}
+.site-menu .header-container{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1400px;margin:0 auto;padding:0 15px;gap:0}
+.site-menu .logo{display:flex;align-items:center;font-weight:900;font-size:clamp(1.3rem,4.5vw,1.6rem);color:white;text-decoration:none;letter-spacing:-1px;position:relative;z-index:1002;line-height:1.7;white-space:nowrap}
+.site-menu .logo span{position:relative}.site-menu .logo span::before{content:"";position:absolute;bottom:0;left:0;width:100%;height:5px;background:white;transform:skewX(-20deg);z-index:-1}
+.site-menu .logo-icon{display:inline-flex;align-items:center;justify-content:center;width:1.3em;height:1.3em;margin-right:10px;position:relative}
+.site-menu .logo-shield{position:absolute;color:white;font-size:1.3em;z-index:1;text-shadow:0 0 2px rgb(0 0 0 / .2)}
+.site-menu .logo-heart{position:absolute;color:#ff6b00;font-size:.7em;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%)}
+.site-menu .fas{font-family:"Header Icons"!important;font-weight:900;font-style:normal;line-height:1;-webkit-font-smoothing:antialiased}.site-menu .fa-shield::before{content:"\f132"}.site-menu .fa-heart::before{content:"\f004"}.site-menu .fa-bars::before{content:"\f0c9"}.site-menu .fa-times::before{content:"\f00d"}
+.site-menu .nav-container{display:flex;align-items:center}.site-menu .nav-menu{display:flex;list-style:none;transition:all .4s ease;margin:0;padding:0}.site-menu .nav-menu li{margin:0 0 0 15px;padding:0}
+.site-menu .nav-menu a{color:white;text-decoration:none;font-weight:600;font-size:clamp(.85rem,3vw,1rem);transition:all .3s;position:relative;padding:5px 0;letter-spacing:normal;line-height:1.7;white-space:nowrap;text-underline-offset:initial}
+.site-menu .nav-menu a::after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:white;transition:width .3s}.site-menu .nav-menu a:hover::after,.site-menu .nav-menu a.active::after{width:100%}
+.site-menu .mobile-menu-btn{display:none;background:none;border:none;font-size:1.6rem;color:white;cursor:pointer;z-index:1001;padding:8px;line-height:normal;min-width:44px;min-height:44px}
+.site-menu a:focus-visible,.site-menu button:focus-visible{outline:3px solid #12265b;outline-offset:4px}.shared-menu-page{padding-top:70px}.shared-menu-page .skip-link{z-index:1003}
+@media(max-width:1240px){.site-menu .mobile-menu-btn{display:block}.site-menu .nav-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;height:100dvh;background:#e05e00;flex-direction:column;padding:90px 25px 25px;z-index:1000;transition:right .3s;overflow-y:auto;visibility:hidden;pointer-events:none}.site-menu .nav-menu.active{right:0;visibility:visible;pointer-events:auto}.site-menu .nav-menu li{margin:0 0 18px}.site-menu .nav-menu a{white-space:normal}}
+@media(max-width:767px){.shared-menu-page{padding-top:60px}}
+@supports(padding:max(0px)){.site-menu{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}.site-menu .header-container{padding-left:max(15px,env(safe-area-inset-left));padding-right:max(15px,env(safe-area-inset-right))}}
+@media(prefers-reduced-motion:reduce){.site-menu,.site-menu *,.site-menu *::after{transition:none!important}}
+@media print{.site-menu{display:none}.shared-menu-page{padding-top:0}}
+
+.site-menu ~ section[id]{scroll-margin-top:84px}
