@@ -1,0 +1,8 @@
+/* A direct, prominent route from the original homepage hero. */
+.hero .home-consultation-entry{width:100%;max-width:390px;margin:22px auto 28px;text-align:center}
+.hero .home-consultation-cta{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;min-height:62px;padding:17px 22px;background:#ff6b00;color:#12265b;border-radius:8px;text-decoration:none;font-family:Raleway,Arial,sans-serif;font-weight:800;font-size:clamp(1.05rem,3.8vw,1.2rem);line-height:1.4;transition:background-color .18s ease}
+.hero .home-consultation-cta svg{width:23px;height:23px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero .home-consultation-cta:hover{background:#ff8126;color:#12265b}.hero .home-consultation-cta:active{background:#f26300}.hero .home-consultation-cta:focus-visible{outline:3px solid #12265b;outline-offset:5px}
+.hero p.home-consultation-hint{margin:10px 0 0;font-size:14px;line-height:1.6;color:#12265b}
+@media(max-width:380px){.hero .home-consultation-cta{padding-inline:15px;gap:10px}}
+@media(prefers-reduced-motion:reduce){.hero .home-consultation-cta{transition:none}}
