@@ -1,9 +1,0 @@
-/* Anonymous consultation photograph, with independent peripheral brand shapes. */
-.m-hero--human{isolation:isolate}.m-hero--human .m-hero-grid{z-index:1}
-.m-hero-ambient{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.m-hero-ambient img{position:absolute;width:650px;height:650px;right:-250px;top:-330px;opacity:.24;transform:rotate(-24deg)}
-.m-hero--human .m-hero-object{height:clamp(380px,35vw,520px);margin:-10px -105px 0 -45px;align-self:center;position:relative;z-index:1}
-.m-hero--human .m-hero-object::before{content:none}
-.m-hero--human .m-hero-object img{display:block;width:100%;height:100%;object-fit:cover;object-position:60% 50%;border:0;border-radius:0;box-shadow:none;--photo-mask-x:linear-gradient(90deg,transparent 0%,#000 15%,#000 87%,transparent 100%);--photo-mask-y:linear-gradient(0deg,transparent 0%,#000 16%,#000 87%,transparent 100%);-webkit-mask-image:var(--photo-mask-x),var(--photo-mask-y);mask-image:var(--photo-mask-x),var(--photo-mask-y);-webkit-mask-composite:source-in;mask-composite:intersect}
-@media(max-width:1050px) and (min-width:721px){.m-hero--human .m-hero-object{height:420px;margin-right:-65px;margin-left:-30px}.m-hero--human .m-hero-object img{object-position:62% 50%;--photo-mask-x:linear-gradient(90deg,transparent 0%,#000 11%,#000 90%,transparent 100%)}.m-hero-ambient img{right:-350px;top:-280px;opacity:.19}}
-@media(max-width:720px){.m-hero--human .m-hero-object{order:1;height:clamp(220px,64vw,270px);width:calc(100% + 48px);margin:14px -24px -6px;align-self:center}.m-hero--human .m-hero-evidence{order:2;margin-top:8px}.m-hero--human .m-hero-object img{object-position:60% 53%;--photo-mask-x:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);--photo-mask-y:linear-gradient(0deg,transparent 0%,#000 13%,#000 86%,transparent 100%)}.m-hero-ambient img{width:380px;height:380px;right:-275px;top:560px;opacity:.17;transform:rotate(-25deg)}}

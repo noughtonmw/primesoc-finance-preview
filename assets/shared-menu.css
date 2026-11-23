@@ -20,3 +20,6 @@
 @media print{.site-menu{display:none}.shared-menu-page{padding-top:0}}
 
 .site-menu ~ section[id]{scroll-margin-top:84px}
+
+/* A separate route, distinguished from the homepage anchors. */
+.site-menu .nav-menu .nav-page-link{display:inline-block;padding:5px 9px;border:1px solid rgb(255 255 255 / .65);border-radius:5px;line-height:1.5}.site-menu .nav-menu .nav-page-link::after{display:none}.site-menu .nav-menu .nav-page-link.active{background:white;color:#12265b;border-color:white}.site-menu .nav-menu .nav-page-link:hover{background:rgb(255 255 255 / .14)}.site-menu .nav-menu .nav-page-link.active:hover{background:white}.shared-menu-page{padding-top:70px}@media(max-width:767px){.shared-menu-page{padding-top:70px}}

@@ -912,7 +912,7 @@
     </style>
     <link rel="stylesheet" href="assets/main-additions.css">
 <link rel="stylesheet" href="assets/shared-menu.css"><script src="assets/shared-menu.js" defer></script><link rel="stylesheet" href="assets/demo.css"></head>
-<body><aside class="demo-banner" aria-label="Режим просмотра">Демонстрационная версия. Отправка отзывов отключена. Политика ожидает утверждения.</aside>
+<body>
     <header class="site-menu">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="ПраймСоц Финанс — главная">
@@ -922,8 +922,9 @@
             <nav class="nav-container" aria-label="Основная навигация">
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#" class="active" aria-current="page">Главная</a></li>
+                    <li class="nav-page-item"><a class="nav-page-link" href="consultation.html">Почему выбирают нас</a></li>
                     <li><a href="#services">Услуги</a></li>
-                    <li><a href="consultation.html">Почему выбирают нас</a></li>
+                    
                     <li><a href="#loan-types">Виды кредитов</a></li>
                     <li><a href="#advantages">Преимущества</a></li>
                     <li><a href="#process">Процесс</a></li>
@@ -1177,7 +1178,7 @@
                 renderCarousel();
                 document.getElementById('avgValueDisplay').textContent = '—';
                 document.getElementById('avgStarsDisplay').textContent = '';
-                document.getElementById('testimonialCarousel').innerHTML = '<p class="demo-review-note">В демонстрационной версии отзывы и рейтинг не загружаются. На работающем сайте они берутся из базы данных.</p>';
+                document.getElementById('testimonialCarousel').innerHTML = '<p class="demo-review-note">Реальные отзывы доступны на <a href="https://xn--80aaxdphbefkof8a1a.xn--p1ai/#testimonials" target="_blank" rel="noopener noreferrer">основном сайте</a>.</p>';
             }
 
             function renderCarousel() {
