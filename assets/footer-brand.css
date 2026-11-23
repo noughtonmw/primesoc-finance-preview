@@ -1,0 +1,11 @@
+/* Reuses the incumbent header mark and lettering in every footer. */
+footer .footer-logo{display:inline-flex;align-items:center;position:relative;isolation:isolate;max-width:100%;margin:0 0 18px;color:white;text-decoration:none;font-family:Raleway,Arial,sans-serif;font-weight:900;font-size:clamp(1.2rem,4.4vw,1.6rem);letter-spacing:-1px;line-height:1.7;white-space:nowrap}
+footer .footer-logo>span:not(.logo-icon){position:relative}footer .footer-logo>span:not(.logo-icon)::before{content:"";position:absolute;bottom:0;left:0;width:100%;height:5px;background:white;transform:skewX(-20deg);z-index:-1}
+footer .footer-logo .logo-icon{display:inline-flex;align-items:center;justify-content:center;width:1.3em;height:1.3em;margin-right:10px;position:relative;flex:none}
+footer .footer-logo .fas{font-family:"Header Icons"!important;font-weight:900;font-style:normal;line-height:1;-webkit-font-smoothing:antialiased}footer .footer-logo .fa-shield::before{content:"\f132"}footer .footer-logo .fa-heart::before{content:"\f004"}
+footer .footer-logo .logo-shield{position:absolute;color:white;font-size:1.3em;z-index:1}footer .footer-logo .logo-heart{position:absolute;color:#ff6b00;font-size:.7em;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%)}
+footer .footer-logo:focus-visible{outline:3px solid #ffab70;outline-offset:5px}footer nav a{overflow-wrap:anywhere}
+.site-footer .footer-inner{flex-wrap:wrap}.site-footer .footer-inner nav{flex-wrap:wrap}.site-footer .footer-logo{margin-bottom:0}
+
+/* New pages have a light footer; retain the same mark in navy. */
+.site-footer .footer-logo,.site-footer .footer-logo .logo-shield{color:#12265b}.site-footer .footer-logo>span:not(.logo-icon)::before{background:#12265b}

@@ -32,13 +32,34 @@
     dots.forEach((dot,i) => {const passed=progress>=i/(dots.length-1);dot.parentElement.classList.toggle('is-past',passed);dot.parentElement.classList.toggle('is-current',passed && (i===dots.length-1 || progress<(i+1)/(dots.length-1)));});
   }
   function schedule(layout=false) {dirty=dirty||layout;if(!frame) frame=requestAnimationFrame(tick);}
-  function showAll() {if(revealObserver)revealObserver.disconnect();document.querySelectorAll('.v8-reveal-pending').forEach(el=>{el.classList.remove('v8-reveal-pending');el.classList.add('v8-revealed');});}
+  function showAll() {
+    if(revealObserver)revealObserver.disconnect();
+    document.querySelectorAll('.v9-reveal-pending').forEach(show);
+  }
+  function show(el) {
+    el.classList.remove('v9-reveal-pending');el.classList.add('v9-revealed');
+    if(revealObserver)revealObserver.unobserve(el);
+  }
   function setupReveal() {
-    if (reduced.matches || !('IntersectionObserver' in window)) {showAll();return;}
+    if(reduced.matches || !('IntersectionObserver' in window)){showAll();return;}
     try {
-      revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('v8-reveal-pending');entry.target.classList.add('v8-revealed');revealObserver.unobserve(entry.target);}});},{threshold:.06,rootMargin:'0px 0px -24px 0px'});
-      main.querySelectorAll(':scope>section:not(.m-hero)').forEach(section=>{if(section.getBoundingClientRect().top>innerHeight && !section.classList.contains('v8-revealed')){section.classList.add('v8-reveal-pending');revealObserver.observe(section);}});
-    } catch (_) {showAll();}
+      revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)show(entry.target);});},{threshold:.04,rootMargin:'0px 0px -12px 0px'});
+      const selectors='h2,p,.m-scenario,.m-action-list>div,.m-process-flow ol>li,.m-trust-points>div,.m-policy-link,.m-payment .m-cta,.m-faq details,.m-final-action,.m-other-situation a';
+      const groups=Array.from(main.querySelectorAll(':scope>section:not(.m-hero)'));
+      const facts=main.querySelector('.m-facts');if(facts)groups.unshift(facts);
+      const plan=[];
+      groups.forEach(group=>{
+        const candidates=Array.from(group.querySelectorAll(group===facts?':scope>li':selectors));
+        const selected=new Set(candidates);
+        const leaves=candidates.filter(el=>{for(let a=el.parentElement;a&&a!==group;a=a.parentElement)if(selected.has(a))return false;return true;});
+        leaves.forEach((el,i)=>plan.push({el,delay:Math.min(i*60,240),below:el.getBoundingClientRect().top>=innerHeight,step:el.matches('.m-process-flow ol>li')}));
+      });
+      plan.forEach(({el,delay,below,step})=>{
+        el.style.setProperty('--reveal-delay',delay+'ms');if(step)el.classList.add('v9-reveal-step');
+        if(below){el.classList.add('v9-reveal-pending');revealObserver.observe(el);}else el.classList.add('v9-revealed');
+      });
+      main.addEventListener('focusin',event=>{const pending=event.target.closest('.v9-reveal-pending');if(pending)show(pending);});
+    }catch(_){showAll();}
   }
   addEventListener('scroll',()=>schedule(),{passive:true});
   addEventListener('resize',()=>schedule(true),{passive:true});
